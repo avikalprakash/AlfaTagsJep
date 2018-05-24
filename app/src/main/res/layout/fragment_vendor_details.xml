@@ -1,0 +1,154 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.organization.jeptagsalpha.ui.activity.product.ViewProductActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_prod_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="10dp">
+
+                <com.organization.jeptagsalpha.ui.controls.MyTextView
+                    android:id="@+id/lblFullname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:text="Full Name : "
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <com.organization.jeptagsalpha.ui.controls.MyTextView
+                    android:id="@+id/full_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/lblFullname"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:textSize="15dp" />
+
+                <com.organization.jeptagsalpha.ui.controls.MyTextView
+                    android:id="@+id/lblEmail"
+                    android:layout_below="@id/lblFullname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:text="Email : "
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <com.organization.jeptagsalpha.ui.controls.MyTextView
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/lblFullname"
+                    android:layout_toRightOf="@id/lblEmail"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:textSize="15dp" />
+
+                <com.organization.jeptagsalpha.ui.controls.MyTextView
+                    android:id="@+id/lblAddress"
+                    android:layout_below="@id/lblEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:text="Address : "
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <com.organization.jeptagsalpha.ui.controls.MyTextView
+                    android:id="@+id/address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/lblEmail"
+                    android:layout_toRightOf="@id/lblAddress"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:text=""
+                    android:textSize="15dp" />
+
+                <com.organization.jeptagsalpha.ui.controls.MyTextView
+                    android:id="@+id/lblPhone"
+                    android:layout_below="@id/address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:text="Phone : "
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <com.organization.jeptagsalpha.ui.controls.MyTextView
+                    android:id="@+id/phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/lblPhone"
+                    android:layout_below="@id/address"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:textSize="15dp" />
+
+
+                <com.organization.jeptagsalpha.ui.controls.MyTextView
+                android:id="@+id/lblFacebook"
+                android:layout_below="@id/phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:text="Facebook id : "
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+                <com.organization.jeptagsalpha.ui.controls.MyTextView
+                    android:id="@+id/facebookid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/lblFacebook"
+                    android:layout_below="@id/phone"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:textSize="15dp" />
+
+                <com.organization.jeptagsalpha.ui.controls.MyTextView
+                    android:id="@+id/lblSkype"
+                    android:layout_below="@id/lblFacebook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:text="Skype id : "
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <com.organization.jeptagsalpha.ui.controls.MyTextView
+                    android:id="@+id/skypeid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/lblSkype"
+                    android:layout_below="@id/facebookid"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:textSize="15dp" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
+</RelativeLayout>

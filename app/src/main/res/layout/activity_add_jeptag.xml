@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:background="@drawable/bg_all"
+    tools:context="com.organization.jeptagsalpha.ui.activity.product.ProductSaveActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <android.support.v4.widget.NestedScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="15dp">
+
+        <com.organization.jeptagsalpha.ui.controls.MyFormEdit
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.organization.jeptagsalpha.ui.controls.MyFormEdit
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_marginTop="2sp"
+                android:layout_marginBottom="5sp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/btnScanJepTag"
+                    android:layout_marginRight="5sp"
+                    android:layout_marginLeft="10sp"
+                    android:layout_width="78sp"
+                    android:layout_height="50sp"
+                    android:textSize="12sp"
+                    android:enabled="true"
+                    android:text="@string/scan_jeptag"
+                    android:textColor="@color/white"
+                    android:background="@drawable/button_selector"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textAllCaps="false"
+                    />
+                <Button
+                    android:id="@+id/btnStopScan"
+                    android:layout_marginRight="5sp"
+                    android:layout_width="78sp"
+                    android:layout_height="50sp"
+                    android:textSize="12sp"
+                    android:text="@string/stop_scan"
+                    android:textColor="@color/white"
+                    android:background="@drawable/button_selector"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textAllCaps="false"
+                    />
+                <Button
+                    android:id="@+id/btnEditDetails"
+                    android:layout_marginRight="5sp"
+                    android:layout_width="78sp"
+                    android:layout_height="50sp"
+                    android:textSize="12sp"
+                    android:text="@string/edit_details"
+                    android:textAllCaps="false"
+                    android:onClick="Edit"
+                    android:enabled="true"
+                    android:textColor="@color/white"
+                    android:background="@drawable/button_selector"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    />
+                <Button
+                    android:id="@+id/btnDeleteProduct"
+                    android:layout_marginRight="5sp"
+                    android:layout_width="78sp"
+                    android:layout_height="50sp"
+                    android:textSize="12sp"
+                    android:text="@string/delete_product"
+                    android:onClick="delete"
+                    android:enabled="true"
+                    android:textColor="@color/white"
+                    android:background="@drawable/button_selector"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textAllCaps="false"/>
+
+            </com.organization.jeptagsalpha.ui.controls.MyFormEdit>
+         <!--   <com.webstersys.jeptags.ui.controls.MyEditTextLight
+                android:id="@+id/prod_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:enabled="false"
+                android:hint="@string/product_id" />  -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pr_id"
+                android:textColor="@color/bg_main"
+                android:textSize="14sp"
+                android:layout_gravity="center_horizontal"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pr_qty"
+                android:textColor="@color/bg_main"
+                android:textSize="14sp"
+                android:layout_marginTop="5sp"
+                android:layout_gravity="center_horizontal"
+                android:text="Quantity:-"
+                android:layout_marginBottom="5sp"
+                />
+         <!--   <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Longitude"
+                android:id="@+id/longi"
+                android:textColor="@color/white"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Latitude"
+                android:id="@+id/lati"
+                android:textColor="@color/white"/>-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.organization.jeptagsalpha.ui.controls.MyTextView
+        android:id="@+id/sn_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/sn_no"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="10sp"
+        />
+            <com.organization.jeptagsalpha.ui.controls.MyTextView
+                android:id="@+id/jeptag_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/jeptag_id"
+                android:layout_marginLeft="5sp"
+                />
+    <com.organization.jeptagsalpha.ui.controls.MyTextView
+        android:id="@+id/created_at"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/created_at"
+        android:layout_marginLeft="40sp"
+        />
+<!--    <com.webstersys.jeptags.ui.controls.MyTextView
+        android:id="@+id/nfc_tag_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/nfc_tag_type" />-->
+</LinearLayout>
+            </FrameLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <FrameLayout
+                    android:id="@+id/listJepTags"
+                    android:layout_width="match_parent"
+                    android:layout_height="300sp"
+                    >
+                </FrameLayout>
+
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/progressCardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="50sp"
+                    android:layout_marginLeft="50sp"
+
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@drawable/progressbar_shape"
+                        android:paddingLeft="50dp"
+                        android:paddingRight="50dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        >
+
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            >
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/nfc_green"
+                                />
+                            <ProgressBar
+                                android:id="@+id/progressBarRead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:indeterminateDrawable="@drawable/nfc_read_progress"
+                                />
+                            <ProgressBar
+                                android:id="@+id/progressBarWrite"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:indeterminateDrawable="@drawable/nfc_write_progress"
+                                />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/progressBarText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Scanning..."
+                            android:textColor="@color/white"
+                            android:layout_gravity="center_horizontal"
+
+                            />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+
+
+            </RelativeLayout>
+
+
+
+
+
+            <com.organization.jeptagsalpha.ui.controls.MyFormEdit
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <com.organization.jeptagsalpha.ui.controls.MyEditTextLight
+                    android:id="@+id/prod_length"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:hint="@string/product_length" />
+
+                <com.organization.jeptagsalpha.ui.controls.MyEditTextLight
+                    android:id="@+id/prod_width"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:hint="@string/product_width" />
+
+                <com.organization.jeptagsalpha.ui.controls.MyEditTextLight
+                    android:id="@+id/prod_height"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:hint="@string/product_height" />
+            </com.organization.jeptagsalpha.ui.controls.MyFormEdit>
+
+            <com.organization.jeptagsalpha.ui.controls.MyFormEdit
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            </com.organization.jeptagsalpha.ui.controls.MyFormEdit>
+
+            <com.organization.jeptagsalpha.ui.controls.MyFormEdit
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_marginBottom="5sp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+           </com.organization.jeptagsalpha.ui.controls.MyFormEdit>
+        </com.organization.jeptagsalpha.ui.controls.MyFormEdit>
+
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

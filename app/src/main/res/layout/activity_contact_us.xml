@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_contact_us"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+
+    tools:context="com.organization.jeptagsalpha.ui.activity.contact_us.ContactUsActivity">
+    <include layout="@layout/toolbar"></include>
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/facebook_logo"
+        android:src="@drawable/facebook_logo"
+        android:layout_margin="20dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+    <ImageView
+        android:src="@drawable/twitter_logo"
+        android:layout_margin="20dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+        <ImageView
+            android:src="@drawable/youtube_logo"
+            android:layout_margin="20dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+    </LinearLayout>
+
+    <com.organization.jeptagsalpha.ui.controls.MyFormEdit
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            android:src="@drawable/logo"
+            android:layout_width="@dimen/logo_width"
+            android:layout_height="@dimen/logo_height" />
+
+        <com.organization.jeptagsalpha.ui.controls.MyTextView
+            android:text="@string/anti_counterfeiting_solutions"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textAlignment="gravity"
+            android:layout_width="match_parent"
+            android:textColor="@color/colorLightAccent"
+            android:layout_height="wrap_content" />
+
+        <com.organization.jeptagsalpha.ui.controls.MyTextView
+        android:text="@string/company_info"
+        android:layout_width="match_parent"
+         android:textStyle="bold"
+        android:textColor="@color/colorLightAccent"
+        android:layout_height="wrap_content" />
+
+        <com.organization.jeptagsalpha.ui.controls.MyTextView
+            android:layout_marginTop="25dp"
+            android:text="@string/authenticity"
+            android:layout_width="match_parent"
+            android:textColor="@color/md_light_green_A400"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textAlignment="gravity"
+            android:textStyle="bold"
+            android:layout_height="wrap_content" />
+
+
+        <com.organization.jeptagsalpha.ui.controls.MyTextView
+            android:layout_marginTop="25dp"
+            android:text="@string/service_online"
+            android:textSize="20dp"
+            android:layout_width="match_parent"
+            android:textColor="@color/md_light_green_A400"
+            android:gravity="center"
+            android:textAlignment="gravity"
+            android:textStyle="bold"
+            android:layout_height="wrap_content" />
+
+
+        <com.organization.jeptagsalpha.ui.controls.BlueButton
+            android:id="@+id/feedback"
+            android:layout_width="match_parent"
+            android:text="@string/send_us_feedback"
+            android:layout_height="wrap_content" />
+
+    </com.organization.jeptagsalpha.ui.controls.MyFormEdit>
+</RelativeLayout>

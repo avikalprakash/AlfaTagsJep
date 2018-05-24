@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.organization.jeptagsalpha.ui.activity.product.ViewProductActivity">
+   <!-- <item
+        android:id="@+id/action_add_product_image"
+        android:icon="@drawable/ic_folder_plus"
+        android:title="@string/add_product_image"
+        app:showAsAction="always" />-->
+    <item
+        android:id="@+id/action_remove_product_image"
+        android:icon="@drawable/ic_folder_remove"
+        android:title="@string/remove_product_image"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_save_product"
+        android:icon="@drawable/ic_content_save"
+        android:title="@string/save_product"
+        app:showAsAction="never" />
+</menu>

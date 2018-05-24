@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="10dp"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.organization.jeptagsalpha.ui.controls.MyTextView
+        android:id="@+id/prod_id"
+        android:layout_width="match_parent"
+        android:textColor="@color/white"
+        android:text="Product Id"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/BtnClose"
+        android:tint="@color/accent"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_close_circle"
+        android:layout_width="20dp"
+        android:layout_height="20dp" />
+</RelativeLayout>

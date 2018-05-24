@@ -1,0 +1,330 @@
+[
+    {
+        "outputFile": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en\\values-en.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 53,
+                    "endOffset": 104
+                },
+                "from": {
+                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values-en\\strings.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 57,
+                        "endColumn": 53,
+                        "endOffset": 106
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 109,
+                    "endColumn": 56,
+                    "endOffset": 161
+                },
+                "from": {
+                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values-en\\strings.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 569,
+                        "endColumn": 56,
+                        "endOffset": 621
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 166,
+                    "endColumn": 60,
+                    "endOffset": 222
+                },
+                "from": {
+                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values-en\\strings.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 303,
+                        "endColumn": 60,
+                        "endOffset": 359
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 227,
+                    "endColumn": 60,
+                    "endOffset": 283
+                },
+                "from": {
+                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values-en\\strings.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 241,
+                        "endColumn": 60,
+                        "endOffset": 297
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 288,
+                    "endColumn": 67,
+                    "endOffset": 351
+                },
+                "from": {
+                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values-en\\strings.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 627,
+                        "endColumn": 67,
+                        "endOffset": 690
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 356,
+                    "endColumn": 68,
+                    "endOffset": 420
+                },
+                "from": {
+                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values-en\\strings.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 804,
+                        "endColumn": 68,
+                        "endOffset": 868
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 425,
+                    "endColumn": 46,
+                    "endOffset": 467
+                },
+                "from": {
+                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values-en\\strings.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 477,
+                        "endColumn": 46,
+                        "endOffset": 519
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 472,
+                    "endColumn": 54,
+                    "endOffset": 522
+                },
+                "from": {
+                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values-en\\strings.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 365,
+                        "endColumn": 54,
+                        "endOffset": 415
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 527,
+                    "endColumn": 52,
+                    "endOffset": 575
+                },
+                "from": {
+                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values-en\\strings.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 696,
+                        "endColumn": 52,
+                        "endOffset": 744
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 580,
+                    "endColumn": 66,
+                    "endOffset": 642
+                },
+                "from": {
+                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values-en\\strings.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 874,
+                        "endColumn": 66,
+                        "endOffset": 936
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 647,
+                    "endColumn": 35,
+                    "endOffset": 678
+                },
+                "from": {
+                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values-en\\strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 112,
+                        "endColumn": 35,
+                        "endOffset": 143
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 683,
+                    "endColumn": 68,
+                    "endOffset": 747
+                },
+                "from": {
+                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values-en\\strings.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 942,
+                        "endColumn": 68,
+                        "endOffset": 1006
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 752,
+                    "endColumn": 42,
+                    "endOffset": 790
+                },
+                "from": {
+                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values-en\\strings.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 525,
+                        "endColumn": 42,
+                        "endOffset": 563
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 795,
+                    "endColumn": 54,
+                    "endOffset": 845
+                },
+                "from": {
+                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values-en\\strings.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 421,
+                        "endColumn": 54,
+                        "endOffset": 471
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 850,
+                    "endColumn": 52,
+                    "endOffset": 898
+                },
+                "from": {
+                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values-en\\strings.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 187,
+                        "endColumn": 52,
+                        "endOffset": 235
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 903,
+                    "endColumn": 36,
+                    "endOffset": 935
+                },
+                "from": {
+                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values-en\\strings.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 149,
+                        "endColumn": 36,
+                        "endOffset": 181
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 940,
+                    "endColumn": 52,
+                    "endOffset": 988
+                },
+                "from": {
+                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values-en\\strings.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 750,
+                        "endColumn": 52,
+                        "endOffset": 798
+                    }
+                }
+            }
+        ]
+    }
+]

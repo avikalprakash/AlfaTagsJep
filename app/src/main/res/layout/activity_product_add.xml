@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/bg_all"
+    tools:context="com.organization.jeptagsalpha.ui.activity.product.ProductAddActivity">
+
+    <include layout="@layout/toolbar" />
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:padding="10dp"
+        android:background="@color/accent"
+        android:layout_alignParentBottom="true"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.organization.jeptagsalpha.ui.controls.RedButton
+            android:id="@+id/BtnSaveProduct"
+            android:layout_width="match_parent"
+            android:text="@string/save_product"
+            android:layout_height="50dp" />
+    </RelativeLayout>
+    <com.organization.jeptagsalpha.ui.controls.MyTextView
+        android:id="@+id/lblQty"
+        android:layout_below="@+id/AppBar"
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:background="@color/accent"
+        android:text="@string/lbl_qty_status"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@+id/lblQty"
+        android:id="@+id/productaddlist"
+        android:layout_above="@+id/footer"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>

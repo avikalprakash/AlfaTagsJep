@@ -1,0 +1,202 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_all">
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:src="@drawable/logo1"
+            android:layout_marginTop="80dp"
+            android:scaleType="center"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content" />
+
+
+        <com.organization.jeptagsalpha.ui.controls.MyFormEdit
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="-20sp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+            <com.organization.jeptagsalpha.ui.controls.MyEditTextLight
+                android:id="@+id/user_edittext"
+                android:hint="@string/auth_hint_username"
+                android:layout_width="match_parent"
+                android:inputType="text"
+                android:layout_height="wrap_content">
+            </com.organization.jeptagsalpha.ui.controls.MyEditTextLight>
+
+            <com.organization.jeptagsalpha.ui.controls.MyEditTextLight
+                android:id="@+id/password_edittext"
+                android:hint="@string/auth_hint_password"
+                android:layout_width="match_parent"
+                android:inputType="textPassword"
+                android:layout_height="wrap_content">
+            </com.organization.jeptagsalpha.ui.controls.MyEditTextLight>
+            <CheckBox
+                android:id="@+id/saveLoginCheckBox"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/editTextPassword"
+                android:text="@string/auth_remember_me"
+                android:textColor="#FFF" />
+
+            <!--    <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/remember_me_switch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/white"
+                    android:text="@string/auth_remember_me"
+                    android:textSize="15sp" />-->
+            <com.organization.jeptagsalpha.ui.controls.BlueButton
+                android:id="@+id/signin"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="@string/sign_in"
+                android:layout_alignParentBottom="true" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:layout_height="50sp"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/signup"
+                    android:background="@drawable/bg_all"
+                    android:textAlignment="gravity"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="30sp"
+                    android:textAllCaps="false"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/sign_up_here" />
+                <Button
+                    android:layout_height="50sp"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/forgot_password"
+                    android:textAlignment="gravity"
+                    android:textColor="@color/white"
+                    android:layout_marginRight="30sp"
+                    android:layout_marginTop="10dp"
+                    android:textAllCaps="false"
+                    android:background="@drawable/bg_all"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/auth_forgot_password"
+                    />
+            </RelativeLayout>
+        </com.organization.jeptagsalpha.ui.controls.MyFormEdit>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+            <!--  <ImageView
+                  android:id="@+id/signinback"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:src="@drawable/back"
+                  android:paddingLeft="10dp"
+                  android:layout_gravity="center" />-->
+            <com.organization.jeptagsalpha.ui.controls.MyTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sign_in"
+                android:textSize="22dp"
+                android:layout_marginTop="10sp"
+                android:textColor="#ADCCE2"
+                android:layout_marginLeft="16dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginRight="0sp"
+                android:textStyle="bold"
+                android:id="@+id/txtSignin"
+                android:textAlignment="gravity"
+                />
+            <!--           <com.webstersys.jeptags.ui.controls.Spinner.MySpinnerLight
+                           android:id="@+id/lang"
+                           android:background="#ffffff"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_alignParentRight="true"
+                           android:layout_marginRight="40sp"
+                           android:text="EN"
+                           >
+                       </com.webstersys.jeptags.ui.controls.Spinner.MySpinnerLight>-->
+            <!-- <FrameLayout
+                 android:layout_marginTop="20sp"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentRight="true"
+                 android:background="@drawable/btn_back_yellow_border"
+                 android:paddingTop="5dp"
+                 android:paddingBottom="5dp"
+                 android:paddingRight="5sp"
+                 android:paddingLeft="5dp">
+             <Button
+                 android:background="@drawable/btn_back_yellow_border"
+                 android:layout_below="@+id/txtSignin"
+                 android:layout_width="wrap_content"
+                 android:layout_height="30sp"
+                 android:id="@+id/intro_btn_language"
+                 android:textColor="#ffffff"
+                 android:text="@string/language"
+                 android:onClick="language"
+                 android:textAllCaps="false"
+                 android:layout_gravity="center_horizontal"
+
+                 android:layout_alignParentRight="true"/>
+             </FrameLayout>-->
+            <FrameLayout
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:id="@+id/frameLayout"
+                android:layout_marginTop="5sp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                >
+
+                <Button
+                    android:background="@drawable/btn_back_yellow_border"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/intro_btn_language"
+                    android:textColor="#ffffff"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:textSize="12dp"
+                    android:gravity="left"
+                    android:paddingLeft="15dp"
+                    android:text="Language"
+                    android:onClick="language"/>
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="20dp"
+                    android:id="@+id/imageView30"
+                    android:src="@drawable/down_arrow"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="5dp" />
+
+            </FrameLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

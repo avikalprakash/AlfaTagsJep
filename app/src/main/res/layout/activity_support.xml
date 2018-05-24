@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.organization.jeptagsalpha.ui.activity.contact_us.Support">
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="260dp"
+    android:id="@+id/support"
+    android:src="@drawable/support"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:id="@+id/linear2"
+        android:layout_below="@+id/support"
+        android:background="#000000">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text1"
+            android:text="ANTI COUNTERFEITING"
+            android:textColor="#f9e403"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AUTHENTICITY GUARANTEED 100%"
+            android:textColor="#a2c73b"
+            android:layout_below="@+id/text1"
+            android:id="@+id/text2"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SERVICE ONLINE 24X7"
+            android:textColor="#a2c73b"
+            android:layout_below="@+id/text2"
+            android:id="@+id/text3"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send us feedback"
+            android:textColor="#a2c73b"
+            android:layout_below="@+id/text3"
+            android:id="@+id/text4"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:text="Send"
+        android:id="@+id/send"
+        android:textColor="#ffffff"
+        android:textAllCaps="false"
+        android:background="#838b8b"
+        android:layout_below="@+id/linear2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+</RelativeLayout>

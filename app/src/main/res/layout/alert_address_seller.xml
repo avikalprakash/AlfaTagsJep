@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    >
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/titleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/icon_location"
+        android:gravity="center_vertical"
+        android:text="@string/seller_address"
+        android:textColor="@color/material_drawer_primary_dark"
+        android:textStyle="bold|italic" />
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/messageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20sp"
+        android:layout_marginTop="5sp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/seller_msg"
+        android:textColor="@color/md_black_1000" />
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <RadioButton
+            android:id="@+id/checkAddress1"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textColor="@color/md_green_800"
+            android:text="@string/default_add"
+            android:textStyle="bold"
+            android:visibility="visible"
+            />
+        <RadioButton
+            android:id="@+id/checkAddress2"
+            android:checked="false"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textColor="@color/md_red_800"
+            android:text="@string/other_add"
+            android:enabled="true"
+            android:textStyle="bold"
+            android:visibility="visible"/>
+        <RadioButton
+            android:id="@+id/checkAddress3"
+            android:checked="false"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textColor="@color/md_brown_900"
+            android:text="@string/new_a"
+            android:enabled="true"
+            android:textStyle="bold"
+            android:visibility="visible"/>
+
+    </RadioGroup>
+</LinearLayout>

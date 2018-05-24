@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:background="@drawable/bg_all"
+    >
+
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.organization.jeptagsalpha.ui.controls.MyFormEdit
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical">
+
+            <com.organization.jeptagsalpha.ui.controls.MyTextView
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="NFC scan"
+                android:textStyle="bold"
+                android:textAlignment="gravity"
+                android:textColor="@color/accent"
+                android:textSize="20dp"
+                android:layout_marginBottom="25sp"/>
+
+            <com.organization.jeptagsalpha.ui.controls.MyTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:text="Product URL" />
+
+            <com.organization.jeptagsalpha.ui.controls.MyTextView
+                android:id="@+id/prod_url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:text="" />
+
+
+            <com.organization.jeptagsalpha.ui.controls.MyTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Saler Address"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
+
+
+            <com.organization.jeptagsalpha.ui.controls.MyTextView
+                android:id="@+id/saler_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
+            <android.support.v7.widget.CardView
+                android:id="@+id/progressCardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="50sp"
+                android:layout_marginLeft="50sp"
+                android:visibility="gone"
+                android:layout_gravity="center_horizontal"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/progressbar_shape"
+                    android:paddingLeft="50dp"
+                    android:paddingRight="50dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    >
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/nfc_green"
+                            />
+                        <ProgressBar
+                            android:id="@+id/progressBarRead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:indeterminateDrawable="@drawable/nfc_read_progress"
+                            />
+                        <ProgressBar
+                            android:id="@+id/progressBarWrite"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:indeterminateDrawable="@drawable/nfc_write_progress"
+                            />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/progressBarText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Scanning..."
+                        android:textColor="@color/white"
+                        android:layout_gravity="center_horizontal"
+
+                        />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <com.organization.jeptagsalpha.ui.controls.MyFormEdit
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_marginBottom="30dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <com.organization.jeptagsalpha.ui.controls.BlueButton
+                    android:layout_marginRight="5dp"
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:onClick="AddLocation"
+                    android:visibility="gone"
+                    android:text="@string/add_location"
+                    />
+
+            </com.organization.jeptagsalpha.ui.controls.MyFormEdit>
+        </com.organization.jeptagsalpha.ui.controls.MyFormEdit>
+
+    </ScrollView>
+
+    <include layout="@layout/toolbar" />
+
+</LinearLayout>

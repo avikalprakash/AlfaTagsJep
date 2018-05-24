@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+
+    <ImageView
+
+        android:id="@+id/prod_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/default_product" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_toRightOf="@+id/prod_image"
+        android:orientation="vertical">
+
+        <com.organization.jeptagsalpha.ui.controls.MyTextView
+            android:id="@+id/prod_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="product_id"
+            android:textColor="@color/accent"
+            android:textStyle="bold" />
+        <com.organization.jeptagsalpha.ui.controls.MyTextView
+            android:id="@+id/prod_name"
+            android:textColor="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textStyle="bold"
+            android:text="product_name" />
+
+        <com.organization.jeptagsalpha.ui.controls.MyTextView
+            android:id="@+id/prod_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="@android:color/white"
+            android:text="category" />
+
+    </LinearLayout>
+
+   <!-- <ImageView
+        android:id="@+id/BtnClose"
+        android:tint="@color/accent"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="10dp"
+        android:src="@drawable/ic_close_circle" />-->
+    <com.organization.jeptagsalpha.ui.controls.MyTextView
+        android:layout_width="wrap_content"
+        android:id="@+id/prod_price"
+        android:text="0.00"
+        android:textStyle="bold|italic"
+        android:layout_margin="10dp"
+        android:textColor="@color/accent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

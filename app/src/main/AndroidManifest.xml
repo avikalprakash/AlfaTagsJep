@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.organization.jeptagsalpha">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MEDIA_CONTENT_CONTROL" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CAMERA_EXTENDED" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.hardware.camera.autofocus" />
+
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="true" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_logo"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon,android:theme">
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"
+            tools:replace="android:value" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyApBFeIeV7AL3rYq-MZdDRS5TxMMPWxt0E" />
+
+        <activity
+            android:name=".ui.activity.authorization.SplashActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.activity.authorization.LoginActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.authorization.SignUpActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.main.MainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.nfc.action.TAG_DISCOVERED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.activity.write_tag.WriteTagActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/title_activity_write_tag"
+            android:parentActivityName=".ui.activity.main.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.organization.jeptagsalpha.ui.activity.main.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ui.activity.product.ViewProductActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label=""
+            android:parentActivityName=".ui.activity.main.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.organization.jeptagsalpha.ui.activity.main.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ui.activity.product.ProductSaveActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/title_activity_product_edit"
+            android:parentActivityName=".ui.activity.product.ProductListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.organization.jeptagsalpha.ui.activity.product.ProductListActivity" />
+        </activity>
+        <activity android:name="com.soundcloud.android.crop.CropImageActivity" />
+        <activity
+            android:name=".ui.activity.product.ProductListActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/title_activity_product_list"
+            android:parentActivityName=".ui.activity.main.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.organization.jeptagsalpha.ui.activity.main.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ui.activity.product.ProductAddActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/title_activity_product_add"
+            android:parentActivityName=".ui.activity.main.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.organization.jeptagsalpha.ui.activity.main.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ui.activity.profile.ProfileActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/title_activity_profile"
+            android:parentActivityName=".ui.activity.main.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.organization.jeptagsalpha.ui.activity.main.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ui.activity.product.ProductImageViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_product_image_view"
+            android:parentActivityName=".ui.activity.product.ViewProductActivity"
+            android:theme="@style/FullscreenTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.organization.jeptagsalpha.ui.activity.product.ViewProductActivity" />
+        </activity>
+        <activity
+            android:name=".ui.activity.contact_us.ContactUsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:parentActivityName=".ui.activity.main.MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.organization.jeptagsalpha.ui.activity.main.MainActivity" />
+        </activity>
+        <activity android:name=".ui.activity.product.AddJepTag">
+            <intent-filter>
+                <action android:name="android.nfc.action.TAG_DISCOVERED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.activity.product.EditProductDetails" />
+        <activity android:name=".ui.activity.product.ScanTag" />
+        <activity
+            android:name=".ui.activity.product.ReadNFCActivity"
+            android:label="@string/title_activity_read_nfc"
+            android:theme="@style/AppTheme" />
+
+        <meta-data
+            android:name="android.nfc.action.TECH_DISCOVERED"
+            android:resource="@xml/nfc_tech_filter" />
+
+        <activity android:name=".ui.activity.product.AddSellerAddress" />
+        <activity android:name=".ui.activity.authorization.ForgotPassword" />
+        <activity android:name=".ui.activity.contact_us.Support" />
+        <activity android:name=".ui.activity.product.Report" />
+        <activity android:name=".ui.activity.product.AddJepTags" />
+        <activity android:name=".ui.activity.product.ProductDetailsActivity" />
+        <activity android:name=".ui.activity.product.ProductPendingListActivity" />
+        <activity android:name=".ui.activity.product.ApprovedProductList" />
+        <activity android:name=".ui.activity.main.TemperatureHome" />
+        <activity android:name=".Temperature.QrScannerHandler" />
+        <activity android:name=".Temperature.TempListActivity" />
+        <activity android:name=".Temperature.SettingActivity" />
+        <activity android:name=".ui.activity.main.TempActivity" />
+        <activity android:name=".Temperature.TempMain" />
+        <activity android:name=".Temperature.ChartActivity" />
+        <activity
+            android:name=".Temperature.TempHome"
+            android:label="Temperature"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".Temperature.InfoActivity"></activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/bg_all"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.organization.jeptagsalpha.ui.activity.profile.ProfileActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <RelativeLayout
+        android:layout_below="@+id/AppBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <com.organization.jeptagsalpha.ui.controls.MyFormEdit
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_alignParentBottom="true">
+            <com.organization.jeptagsalpha.ui.controls.MyTextView
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/profile_details"
+                android:textStyle="bold"
+                android:textAlignment="gravity"
+                android:textColor="@color/accent"
+                android:textSize="20dp" />
+
+            <com.organization.jeptagsalpha.ui.controls.MyEditTextLight
+                android:id="@+id/full_name"
+                android:hint="@string/full_name"
+                android:inputType="text"
+                android:enabled="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.organization.jeptagsalpha.ui.controls.MyEditTextLight
+                android:id="@+id/email_edittext"
+                android:hint="@string/auth_hint_email"
+                android:inputType="textEmailAddress"
+                android:enabled="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <com.organization.jeptagsalpha.ui.controls.MyEditTextLight
+                android:id="@+id/store_name"
+                android:hint="@string/store_name"
+                android:enabled="false"
+                android:inputType="text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <com.organization.jeptagsalpha.ui.controls.MyTextView
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/store_address"
+                android:textStyle="bold"
+                android:id="@+id/st_add"
+                android:textAlignment="gravity"
+                android:textColor="@color/accent"
+                android:textSize="20dp" />
+
+            <com.organization.jeptagsalpha.ui.controls.MyEditTextLight
+                android:id="@+id/street_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="@string/street"
+                android:enabled="false"/>
+            <com.organization.jeptagsalpha.ui.controls.MyEditTextLight
+                android:id="@+id/city_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="@string/city"
+                android:enabled="false"/>
+            <com.organization.jeptagsalpha.ui.controls.MyEditTextLight
+                android:id="@+id/state_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="@string/state"
+                android:enabled="false"/>
+            <com.organization.jeptagsalpha.ui.controls.MyEditTextLight
+                android:id="@+id/postalcode_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="@string/postal_code"
+                android:enabled="false"/>
+            <com.organization.jeptagsalpha.ui.controls.MyEditTextLight
+                android:id="@+id/country_spinner"
+                android:layout_width="match_parent"
+                android:hint="@string/country"
+                android:enabled="false"
+                android:layout_height="wrap_content" />
+            <com.organization.jeptagsalpha.ui.controls.MyEditTextLight
+                android:id="@+id/phone_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:maxLength="10"
+                android:hint="@string/phoneno"
+                android:enabled="false"/>
+            <com.organization.jeptagsalpha.ui.controls.BlueButton
+                android:id="@+id/ok"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="@string/ok"
+                android:layout_marginBottom="25sp"
+                />
+        </com.organization.jeptagsalpha.ui.controls.MyFormEdit>
+        </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>

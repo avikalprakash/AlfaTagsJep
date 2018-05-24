@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+   <!-- <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:id="@+id/prod_image"
+        />-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/prod_image"
+        />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/prod_image"
+    android:id="@+id/prod_qty"
+    android:text="Quantity"
+    android:textStyle="bold"
+    android:textSize="15dp"
+    android:layout_marginTop="10dp"
+    android:textColor="#e11515"
+    android:layout_centerHorizontal="true"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:layout_below="@+id/prod_qty"
+        android:layout_marginTop="10dp"
+        android:id="@+id/jeptagDetails"
+        android:layout_marginBottom="10dp"></FrameLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:text="Add"
+        android:id="@+id/add"
+        android:textAllCaps="false"
+        android:layout_below="@+id/jeptagDetails"
+        android:background="#cd5555"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:text="Stop"
+        android:id="@+id/stop"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="false"
+        android:layout_below="@+id/jeptagDetails"
+        android:background="#cd5555"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginRight="20dp"
+        android:text="Exit"
+        android:id="@+id/exit"
+        android:layout_alignParentRight="true"
+        android:textAllCaps="false"
+        android:layout_below="@+id/jeptagDetails"
+        android:background="#cd5555"/>
+</RelativeLayout>
+</ScrollView>

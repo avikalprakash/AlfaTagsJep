@@ -1,0 +1,26 @@
+[
+    {
+        "outputFile": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w500dp-v13\\values-w500dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 54,
+                    "endOffset": 105
+                },
+                "from": {
+                    "file": "C:\\Users\\Fujitsu\\.android\\build-cache\\d389e54ac69e32a48d348e2d66d2ae5fa4475391\\output\\res\\values-w500dp-v13\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 279,
+                        "endColumn": 54,
+                        "endOffset": 329
+                    }
+                }
+            }
+        ]
+    }
+]

@@ -1,0 +1,238 @@
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.organization.jeptagsalpha.ui.activity.product.ViewProductActivity">
+
+
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_prod_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+            <com.organization.jeptagsalpha.ui.controls.MyTextView
+                android:id="@+id/prod_name"
+                android:layout_width="match_parent"
+                android:text="Product Name"
+                android:textSize="30dp"
+                android:gravity="center|center_horizontal"
+                android:textColor="@color/primary_dark"
+                android:layout_height="wrap_content" />
+            <com.organization.jeptagsalpha.ui.controls.MyTextView
+                android:id="@+id/lblId"
+                android:layout_below="@+id/prod_name"
+                android:layout_width="wrap_content"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:text="Id : "
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_height="wrap_content" />
+            <com.organization.jeptagsalpha.ui.controls.MyTextView
+                android:id="@+id/prod_id"
+                android:layout_below="@+id/prod_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textSize="15dp"
+                android:layout_toRightOf="@id/lblId" />
+            <com.organization.jeptagsalpha.ui.controls.MyTextView
+                android:id="@+id/lblCategory"
+                android:layout_below="@+id/lblId"
+                android:layout_width="wrap_content"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:text="Category : "
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_height="wrap_content" />
+            <com.organization.jeptagsalpha.ui.controls.MyTextView
+                android:id="@+id/prod_category"
+                android:layout_below="@+id/lblId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textSize="15dp"
+                android:layout_toRightOf="@id/lblCategory" />
+            <com.organization.jeptagsalpha.ui.controls.MyTextView
+                android:id="@+id/lblWeight"
+                android:layout_below="@+id/lblCategory"
+                android:layout_width="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:text="Weight(lbs) : "
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp" />
+            <com.organization.jeptagsalpha.ui.controls.MyTextView
+                android:id="@+id/prod_weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/prod_category"
+                android:layout_toRightOf="@id/lblWeight"
+                android:paddingTop="5dp"
+                android:textSize="15dp"
+                android:paddingBottom="5dp" />
+            <com.organization.jeptagsalpha.ui.controls.MyTextView
+                android:id="@+id/lblLength"
+                android:visibility="gone"
+                android:layout_below="@+id/lblWeight"
+                android:layout_width="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:text="Length : "
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_height="wrap_content" />
+            <com.organization.jeptagsalpha.ui.controls.MyTextView
+                android:visibility="gone"
+                android:id="@+id/prod_length"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/prod_weight"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textSize="15dp"
+                android:layout_toRightOf="@id/lblLength" />
+            <com.organization.jeptagsalpha.ui.controls.MyTextView
+                android:visibility="gone"
+                android:id="@+id/lblWidth"
+                android:layout_below="@+id/lblLength"
+                android:layout_width="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:text="Width : "
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_height="wrap_content" />
+            <com.organization.jeptagsalpha.ui.controls.MyTextView
+                android:visibility="gone"
+                android:id="@+id/prod_width"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/prod_length"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textSize="15dp"
+                android:layout_toRightOf="@id/lblWidth" />
+
+            <com.organization.jeptagsalpha.ui.controls.MyTextView
+                android:visibility="gone"
+                android:id="@+id/lblHeight"
+                android:layout_below="@+id/lblWidth"
+                android:layout_width="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:text="Height : "
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_height="wrap_content" />
+            <com.organization.jeptagsalpha.ui.controls.MyTextView
+                android:visibility="gone"
+                android:id="@+id/prod_height"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/prod_width"
+                android:paddingTop="5dp"
+                android:textSize="15dp"
+                android:paddingBottom="5dp"
+                android:layout_toRightOf="@id/lblHeight" />
+            <com.organization.jeptagsalpha.ui.controls.MyTextView
+                android:id="@+id/lblPrice"
+                android:layout_below="@+id/lblWidth"
+                android:layout_width="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:text="Price : "
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_height="wrap_content" />
+            <com.organization.jeptagsalpha.ui.controls.MyTextView
+
+                android:id="@+id/prod_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/prod_width"
+                android:paddingTop="5dp"
+                android:textSize="15dp"
+                android:paddingBottom="5dp"
+                android:layout_toRightOf="@id/lblPrice" />
+
+            <com.organization.jeptagsalpha.ui.controls.MyTextView
+                android:id="@+id/lblDescription"
+                android:layout_below="@+id/lblPrice"
+                android:layout_width="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:text="Description : "
+                android:paddingTop="10dp"
+                android:layout_height="wrap_content" />
+            <com.organization.jeptagsalpha.ui.controls.MyTextView
+                android:id="@+id/prod_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/prod_price"
+                android:paddingTop="10dp"
+                android:textSize="15dp"
+                android:layout_toRightOf="@id/lblDescription" />
+
+
+
+
+            <!--            <com.webstersys.jeptags.ui.controls.MyTextView
+                            android:id="@+id/lblFactory"
+                            android:layout_width="wrap_content"
+                            android:textSize="20dp"
+                            android:text="Factory : "
+                            android:layout_height="wrap_content" />
+                        <com.webstersys.jeptags.ui.controls.MyTextView
+                            android:id="@+id/prod_factory"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/lblFactory" />
+                        <com.webstersys.jeptags.ui.controls.MyTextView
+                            android:id="@+id/lblBrand"
+                            android:layout_width="wrap_content"
+                            android:textSize="20dp"
+                            android:text="Factory : "
+                            android:layout_height="wrap_content" />
+                        <com.webstersys.jeptags.ui.controls.MyTextView
+                            android:id="@+id/prod_brand"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/lblFactory" />-->
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/card_prod_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:id="@+id/map_container"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"/>
+
+    </android.support.v7.widget.CardView>
+</RelativeLayout>
+</android.support.v4.widget.NestedScrollView>

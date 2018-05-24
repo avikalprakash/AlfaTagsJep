@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/linear">
+        <TextView
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:text="No."
+            android:layout_marginLeft="10dp"
+            android:textSize="12dp"/>
+        <TextView
+            android:layout_width="60dp"
+            android:layout_marginLeft="25dp"
+            android:layout_height="wrap_content"
+            android:text="Duriation"
+            android:textSize="12dp"/>
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="Time"
+            android:textSize="12dp"
+            android:gravity="center_horizontal"/>
+        <TextView
+            android:layout_width="80dp"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="15dp"
+            android:layout_height="wrap_content"
+            android:text="Temp."
+            android:textSize="12dp"/>
+    </LinearLayout>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/linear"
+        android:id="@+id/prodList"
+        android:divider="#f08080"
+        android:dividerHeight="1dp"
+        android:layout_margin="10dp"></ListView>
+</RelativeLayout>
+

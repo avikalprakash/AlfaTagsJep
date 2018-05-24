@@ -1,0 +1,19 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_all"
+    tools:context="com.organization.jeptagsalpha.ui.activity.product.ProductImageViewActivity">
+
+   <ProgressBar
+       android:id="@+id/prod_image_progress"
+       android:visibility="visible"
+       android:layout_width="wrap_content"
+       android:layout_centerInParent="true"
+       android:layout_height="wrap_content" />
+   <ImageView
+       android:adjustViewBounds="true"
+       android:id="@+id/prod_image"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent" />
+</RelativeLayout>

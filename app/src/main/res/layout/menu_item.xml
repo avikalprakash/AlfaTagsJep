@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nav_scan_product"
+    style="@style/MenuLayout"
+    android:onClick="setProgress">
+
+    <ImageView
+        style="@style/MenuLayoutImage"
+        android:src="@drawable/ic_barcode_scan"
+        android:tint="@color/accent" />
+
+    <com.organization.jeptagsalpha.ui.controls.MyTextView
+        style="@style/MenuLayoutText"
+        android:text="@string/nav_scan_product" />
+</LinearLayout>

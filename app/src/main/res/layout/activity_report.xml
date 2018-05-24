@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#c1cdcd"
+    tools:context="com.organization.jeptagsalpha.ui.activity.product.Report">
+    <include layout="@layout/toolbar" />
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="100dp"
+    android:text="Quantity Product"
+    android:layout_marginLeft="20dp"
+    android:textSize="18dp"
+    android:id="@+id/text1"
+    android:textColor="#000000"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="10"
+        android:layout_marginRight="20dp"
+        android:textSize="18dp"
+        android:layout_alignParentRight="true"
+        android:id="@+id/qty_product"
+        android:textColor="#000000"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Quantity Pending Product"
+        android:layout_marginLeft="20dp"
+        android:textSize="18dp"
+        android:id="@+id/text2"
+        android:layout_below="@+id/text1"
+        android:textColor="#000000"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="5"
+        android:layout_below="@+id/text1"
+        android:layout_marginRight="20dp"
+        android:textSize="18dp"
+        android:layout_alignParentRight="true"
+        android:id="@+id/qty_pending_product"
+        android:textColor="#000000"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="5dp"
+        android:background="#cdc0b0"
+        android:id="@+id/linear1"
+        android:orientation="horizontal"
+        android:layout_below="@+id/text2"></LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:layout_below="@+id/linear1"
+        android:id="@+id/listProduct"></ListView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/listProduct"
+        android:layout_marginTop="20dp"
+        android:textSize="18dp"
+        android:id="@+id/text6"
+        android:textColor="#000000"
+        android:layout_marginLeft="150dp"
+        android:text="Total"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/listProduct"
+        android:layout_marginTop="20dp"
+        android:textSize="18dp"
+        android:textColor="#000000"
+        android:id="@+id/total"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:text="19,400"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="5dp"
+        android:background="#cdc0b0"
+        android:id="@+id/linear2"
+        android:orientation="horizontal"
+        android:layout_below="@+id/text6"></LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear2"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="Chip Scan"
+        android:id="@+id/text7"
+        android:textSize="18dp"
+        android:textColor="#000000"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear2"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:text="10,000"
+        android:textSize="18dp"
+        android:id="@+id/chip_scan"
+        android:layout_alignParentRight="true"
+        android:textColor="#000000"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text7"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/text8"
+        android:text="Total chip need scan"
+        android:textSize="18dp"
+        android:textColor="#000000"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text7"
+        android:id="@+id/remainning_scan"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:text="9,400"
+        android:textSize="18dp"
+        android:layout_alignParentRight="true"
+        android:textColor="#000000"/>
+
+</RelativeLayout>
