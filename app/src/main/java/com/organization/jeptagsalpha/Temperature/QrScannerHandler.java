@@ -42,12 +42,8 @@ public class QrScannerHandler extends AppCompatActivity implements ZXingScannerV
         Log.d("HELLO<><><><>", rawResult.getBarcodeFormat().toString());
         Data = rawResult.getText();
 
-        Toast.makeText(this, Data, Toast.LENGTH_SHORT).show();
-//        AlertDialog.Builder builder = new AlertDialog.Builder(Scanner_Activity.this);
-//        builder.setTitle("Scan Result");
-//        builder.setMessage(rawResult.getText());
-//        AlertDialog alert1 = builder.create();
-//        alert1.show();
+//        Toast.makeText(this, Data, Toast.LENGTH_SHORT).show();
+
         mscanner.stopCameraPreview();
         mscanner.stopCamera();
        Help.DATA=Data;

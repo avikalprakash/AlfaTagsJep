@@ -1,6 +1,5 @@
 package com.organization.jeptagsalpha.Temperature;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,70 +11,54 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.organization.jeptagsalpha.Database.DBManager;
+import com.organization.jeptagsalpha.Database.DatabaseHandler;
 import com.organization.jeptagsalpha.R;
-import com.organization.jeptagsalpha.ui.activity.main.TemperatureHome;
 
 public class SettingActivity extends AppCompatActivity {
     RadioButton tempRadioButton, timeZoneRadioButton;
+    RadioButton celcious, fahrenheit, local, utc;
     RadioGroup radiogroup1, radiogroup2;
-    EditText hh_editext, mm_editext, ss_editext, upper_edittext, lower_edittext;
-    Button saveChange;
-    private DBManager dbManager;
+    EditText hh_editext, mm_editext, ss_editext, upper_edittext, lower_edittext, profile_name;
+    Button saveChange, cancel;
+    DatabaseHandler dbHandler = new DatabaseHandler(this);
+    String id="";
     String GetSQliteQuery;
     ImageView back;
-    String activity;
-    String interval, hh,mm,ss, upper_limit, lower_limit, temperature, time_zone;
+    String interval, hh,mm,ss, upper_limit, lower_limit, temperature, time_zone, pName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
         back = (ImageView)findViewById(R.id.back);
-        activity=getIntent().getStringExtra("activity");
+        celcious=(RadioButton)findViewById(R.id.celcious);
+        fahrenheit=(RadioButton)findViewById(R.id.fahrenheit);
+        utc=(RadioButton)findViewById(R.id.utc);
+        local=(RadioButton)findViewById(R.id.local);
         radiogroup1=(RadioGroup)findViewById(R.id.radiogroup1);
         radiogroup2=(RadioGroup)findViewById(R.id.radiogroup2);
         hh_editext=(EditText)findViewById(R.id.hh);
         mm_editext=(EditText)findViewById(R.id.mm);
         ss_editext=(EditText)findViewById(R.id.ss);
-
+        profile_name=(EditText)findViewById(R.id.name_edittext);
+        cancel=(Button)findViewById(R.id.cancel);
         upper_edittext=(EditText)findViewById(R.id.upper_edittext);
         lower_edittext=(EditText)findViewById(R.id.lower_edittext);
         saveChange=(Button)findViewById(R.id.savechange);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (activity.equals("1")){
-                    startActivity(new Intent(getApplicationContext(), TemperatureHome.class));
-                    finish();
-                }else {
-                    finish();
-                }
-            }
-        });
-        dbManager = new DBManager(this);
-        dbManager.open();
-       /* radiogroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                // get selected radio button from radioGroup
-                int selectedId = radioGroup.getCheckedRadioButtonId();
 
-                // find the radiobutton by returned id
-                tempRadioButton = (RadioButton) findViewById(selectedId);
+                    finish();
 
             }
         });
-        radiogroup2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        cancel.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                // get selected radio button from radioGroup
-                int selectedId2 = radioGroup.getCheckedRadioButtonId();
-
-                // find the radiobutton by returned id
-                timeZoneRadioButton = (RadioButton) findViewById(selectedId2);
-
+            public void onClick(View view) {
+                finish();
             }
-        });*/
+        });
+
 
         saveChange.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,28 +80,63 @@ public class SettingActivity extends AppCompatActivity {
                 int selectedId2 = radiogroup2.getCheckedRadioButtonId();
                 timeZoneRadioButton = (RadioButton) findViewById(selectedId2);
                 time_zone = timeZoneRadioButton.getText().toString();
-               // dbManager.insert(interval, upper_limit, lower_limit, temperature, time_zone);
+                pName=profile_name.getText().toString();
+            //    dbManager.insert(interval, upper_limit, lower_limit, temperature, time_zone);
 
 
-                editor.putString("interval", interval);
+              /*  editor.putString("interval", interval);
                 editor.putString("upper_limit", upper_limit);
                 editor.putString("lower_limit", lower_limit);
                 editor.putString("temperature", temperature);
                 editor.putString("time_zone", time_zone);
-                editor.commit();
-                Toast.makeText(getApplicationContext(), "Change successfully", Toast.LENGTH_LONG).show();
+                editor.commit();*/
+                dbHandler.Add_Contact(new TempPojo(pName,
+                        interval, upper_limit, lower_limit, temperature, time_zone, hh, mm, ss));
+                Toast.makeText(getApplicationContext(), "Save successfully", Toast.LENGTH_LONG).show();
+                finish();
             }
         });
+
+        try {
+            id = getIntent().getStringExtra("USER_ID");
+            if (!id.equals("")) {
+                saveChange.setVisibility(View.GONE);
+                int USER_ID = Integer.parseInt(id);
+                TempPojo c = dbHandler.Get_Contact(USER_ID);
+                String name = c.getName();
+                String interval = c.get_interval();
+                String upper = c.get_upper();
+                String lower = c.get_lower();
+                String temp = c.get_temperature();
+                String time = c.get_timezone();
+                String hh = c.get_hh();
+                String mm = c.get_mm();
+                String ss = c.get_ss();
+                upper_edittext.setText(upper);
+                profile_name.setText(name);
+                lower_edittext.setText(lower);
+                hh_editext.setText(hh);
+                mm_editext.setText(mm);
+                ss_editext.setText(ss);
+                if (temp.equals("celcious")){
+                    celcious.setChecked(true);
+                }else if(temp.equals("Fahrenheit")){
+                    fahrenheit.setChecked(true);
+                }
+                if (time.equals("Local")){
+                   local.setChecked(true);
+                }else if (time.equals("UTC")){
+                    utc.setChecked(true);
+                }
+            }
+        }catch (Exception e){}
     }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        if (activity.equals("1")){
-            startActivity(new Intent(getApplicationContext(), TemperatureHome.class));
+
             finish();
-        }else {
-            finish();
-        }
+
     }
 }

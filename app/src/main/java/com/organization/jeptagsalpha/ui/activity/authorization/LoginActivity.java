@@ -58,6 +58,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class LoginActivity extends BaseActivity implements View.OnClickListener {
+    String entity_id;
+
+    public static final String TAG = MainActivity.class.getSimpleName();
     EditText etEmail;
     EditText etPassword;
     Button login;
@@ -214,16 +217,19 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                     else  saveLogin=false;
                         if(object!=null)
                         {
-                            String entity_id=object.getString("entity_id");
+                          entity_id=object.getString("entity_id");
                             String firstname=object.getString("firstname");
                             String lastname=object.getString("lastname");
                             String email=object.getString("email");
+                            Log.d(TAG,entity_id.toString());
+                            Toast.makeText(LoginActivity.this,entity_id,Toast.LENGTH_LONG).show();
+
                             UserLoginDetails userLoginDetails=
                                     new UserLoginDetails(entity_id,firstname,lastname,email,password,saveLogin);
                             BasePreferenceHelper.setLoginDetails(context,userLoginDetails);
                         }
 
-                    Toast.makeText(LoginActivity.this, getString(R.string.toast_login_success), Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, entity_id, Toast.LENGTH_LONG).show();
                    // showCustomAlert("Login Successfully");
                     String sellerId = BasePreferenceHelper.getLoginDetails(context).getEntity_id();
                    new CheckAddress().execute(sellerId);

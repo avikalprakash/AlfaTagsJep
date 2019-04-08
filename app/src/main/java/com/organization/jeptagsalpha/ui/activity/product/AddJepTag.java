@@ -29,6 +29,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -87,10 +88,18 @@ import java.util.TimerTask;
 
 import be.appfoundry.nfclibrary.tasks.interfaces.AsyncOperationCallback;
 
+import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
+import static android.Manifest.permission.CAMERA;
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+
 public class AddJepTag extends AppCompatActivity  implements JepTagsFragment.OnListFragmentInteractionListener,View.OnClickListener{
 
     final String READ_TAG="Scanning to read NFC tag....\n Place NFC Tag near to scanning device";
     final String WRITE_TAG="Scanning to write NFC tag....\n Place NFC Tag near to scanning device";
+    public static final int QR_REQUEST_CODE= 10000;
+    public static final int PERMISSION_REQUEST = 200;
+    public static final int REQUEST_PERMISSION_CODE=1;
 
     TextView pr_id,progressBarText, quantity;
     Bundle bundle = null;
@@ -155,7 +164,8 @@ public class AddJepTag extends AppCompatActivity  implements JepTagsFragment.OnL
     RelativeLayout layout3;
     Button exit;
     TextView prod_name;
-    ImageView back;
+    ImageView back,qrcode;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -199,6 +209,9 @@ public class AddJepTag extends AppCompatActivity  implements JepTagsFragment.OnL
         progressBarWrite=(ProgressBar)findViewById(R.id.progressBarWrite);
         prod_name=(TextView)findViewById(R.id.prod_name);
         imageView=(ImageView)findViewById(R.id.image);
+
+        qrcode =(ImageView)findViewById(R.id.qrcode);
+        qrcode.setOnClickListener(this);
     /*    descriptionP=(TextView)findViewById(R.id.descriptionP);
         descriptionM=(TextView)findViewById(R.id.descriptionM);
         descriptionP.setOnClickListener(new View.OnClickListener() {
@@ -286,7 +299,10 @@ public class AddJepTag extends AppCompatActivity  implements JepTagsFragment.OnL
             addTag.setEnabled(true);
             continueBtn.setEnabled(true);
         }
-        getGpsLocation();
+    getGpsLocation();
+
+
+
     }
 
 
@@ -321,19 +337,19 @@ public class AddJepTag extends AppCompatActivity  implements JepTagsFragment.OnL
         switch (view.getId())
         {
            case R.id.addTag:
-             /*  mAdapter = NfcAdapter.getDefaultAdapter(AddJepTag.this);
+              mAdapter = NfcAdapter.getDefaultAdapter(AddJepTag.this);
                if (mAdapter == null) {
                    Toast.makeText(AddJepTag.this,"Your device do not support nfc",Toast.LENGTH_LONG).show();
                } else {
-                  // getGpsLocation();
-                   progressBarShowHide(READ_TAG,true,1);
+                 getGpsLocation();
+                  // progressBarShowHide(READ_TAG,true,1);
                    nfcMode=1;
                   // btnEditDetails.setEnabled(false);
                   // btnDeleteProduct.setEnabled(false);
                   // btnEditDetails.setEnabled(false);
                    btnDeleteProduct.setEnabled(false);
                    mPendingIntent = PendingIntent.getActivity(AddJepTag.this, 0, new Intent(AddJepTag.this, getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
-               }*/
+               }
             break;
 
             case R.id.stop:
@@ -345,6 +361,14 @@ public class AddJepTag extends AppCompatActivity  implements JepTagsFragment.OnL
                 scanning.setVisibility(View.INVISIBLE);
                 break;
 
+            case R.id.qrcode:
+                Intent intent = new Intent(AddJepTag.this,QRScanner.class);
+                startActivityForResult(intent,QR_REQUEST_CODE);
+
+
+                break;
+
+
             case R.id.continueBtn:
                 scanning.setVisibility(View.VISIBLE);
                 mAdapter = NfcAdapter.getDefaultAdapter(AddJepTag.this);
@@ -352,7 +376,7 @@ public class AddJepTag extends AppCompatActivity  implements JepTagsFragment.OnL
                     Toast.makeText(AddJepTag.this,"Your device do not support nfc",Toast.LENGTH_LONG).show();
                 } else {
                     dialog.show();
-                    // getGpsLocation();
+                  getGpsLocation();
                   //  progressBarShowHide(READ_TAG,true,1);
                     nfcMode=1;
                     // btnEditDetails.setEnabled(false);
@@ -368,6 +392,8 @@ public class AddJepTag extends AppCompatActivity  implements JepTagsFragment.OnL
     public void onListFragmentInteraction(JepTagList item) {
 
     }
+
+
 
     class  DeleteData extends AsyncTask<String, String, String>
     {
@@ -743,16 +769,11 @@ public void time(){
             {
                 progressBarWrite.setVisibility(View.GONE);
                 progressBarRead.setVisibility(View.VISIBLE);
-            }
-            else if(mode==2) {
-                progressBarWrite.setVisibility(View.VISIBLE);
-                progressBarRead.setVisibility(View.GONE);
-            }
 
             if (flag) progressCardView.setVisibility(View.VISIBLE);
             else progressCardView.setVisibility(View.GONE);
         }catch (Exception e){
-            e.printStackTrace();
+            e.printStackTrace();njk
         }
     }*/
     @Override
@@ -762,11 +783,12 @@ public void time(){
         startActivity(iBack);
         finish();
     }
-    class LoadJepTag extends AsyncTask<String, String, String> {
+    class  LoadJepTag extends AsyncTask<String, String, String> {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            progressDialog.setMessage(getString(R.string.prog_load_jeptagid));
+            progressDialog.setMessage("hello hemant");
+           progressDialog.setMessage(getString(R.string.prog_load_jeptagid));
             progressDialog.show();
         }
         @Override
@@ -867,7 +889,7 @@ public void time(){
             alert.setView(R.layout.gps_message);
             alert.setPositiveButton(R.string.allow_gps,
                     new DialogInterface.OnClickListener() {
-                        @TargetApi(Build.VERSION_CODES.M)
+
                         @Override
                         public void onClick(DialogInterface dialog,
                                             int whichButton) {
@@ -895,10 +917,10 @@ public void time(){
 
         } else {
 
-            mlocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0,
-                    (float) 0.01, (android.location.LocationListener) listener);
-            mlocManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0,
-                    (float) 0.01, (android.location.LocationListener) listener);
+
+           mlocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, (float) 0.01, (android.location.LocationListener) listener);
+              mlocManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, (float) 0.01, (android.location.LocationListener) listener);
+
         }
         count=0;
         startTimer();
@@ -979,5 +1001,36 @@ public void time(){
         criteria.setPowerRequirement(Criteria.POWER_MEDIUM);
         String provider = mlocManager.getBestProvider(criteria, true);
         return provider;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        try {
+            super.onActivityResult(requestCode, resultCode, data);
+
+            if (requestCode == QR_REQUEST_CODE  && resultCode  == RESULT_OK) {
+
+                // mycustomDialog();
+
+
+
+
+
+                String requiredValue = data.getStringExtra("QR_RESULT");
+            tagId=requiredValue;
+
+            Toast.makeText(AddJepTag.this,tagId,Toast.LENGTH_LONG).show();
+                productId=requiredValue;
+               // new GetJepTag().execute(sellerId, tagId, productId, lat, lang);
+               new LoadJepTag().execute(productId);
+
+
+//
+            }
+        } catch (Exception ex) {
+            Toast.makeText(AddJepTag.this, ex.toString(),
+                    Toast.LENGTH_SHORT).show();
+        }
+
     }
 }

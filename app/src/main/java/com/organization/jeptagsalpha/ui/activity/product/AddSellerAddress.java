@@ -154,7 +154,7 @@ public class AddSellerAddress extends BaseActivity implements View.OnClickListen
         });
         String sellerId = BasePreferenceHelper.getLoginDetails(context).getEntity_id();
         new GetSellerStore().execute(sellerId);
-        getGpsLocation();
+       // getGpsLocation();
 
     }
 
@@ -390,10 +390,10 @@ public class AddSellerAddress extends BaseActivity implements View.OnClickListen
 
         } else {
 
-            mlocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0,
-                    (float) 0.01, (android.location.LocationListener) listener);
-            mlocManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0,
-                    (float) 0.01, (android.location.LocationListener) listener);
+//            mlocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0,
+//                    (float) 0.01, (android.location.LocationListener) listener);
+//            mlocManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0,
+//                    (float) 0.01, (android.location.LocationListener) listener);
         }
         count=0;
         startTimer();

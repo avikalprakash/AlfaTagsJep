@@ -273,7 +273,6 @@
             <com.organization.jeptagsalpha.ui.controls.MyEditTextLight2
                 android:id="@+id/pr_address"
                 android:layout_width="match_parent"
-                android:enabled="false"
                 android:paddingLeft="20dp"
                 android:layout_height="wrap_content"
                 android:hint="@string/pr_address" />

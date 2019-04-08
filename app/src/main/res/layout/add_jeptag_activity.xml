@@ -141,7 +141,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:id="@+id/continueBtn"
-                android:text="Add"
+                android:text="Add "
                 android:textAllCaps="false"
                 android:background="#cd5555"
                 android:layout_marginLeft="20dp"
@@ -256,11 +256,26 @@
                 <FrameLayout
                     android:id="@+id/listJepTags"
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"
+                    android:layout_height="30dp"
                     >
                 </FrameLayout>
 
             </RelativeLayout>
+
+            <ImageView
+                android:layout_marginTop="50dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/qrcode_scanner"
+                android:id="@+id/qrcode"/>
+
+            <TextView
+                android:layout_below="@+id/qrcode"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true"
+                android:text="Scan QR code"/>
 
         </RelativeLayout>
 

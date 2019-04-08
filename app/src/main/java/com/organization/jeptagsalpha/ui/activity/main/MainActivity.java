@@ -77,6 +77,7 @@ import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
 import static android.Manifest.permission.CAMERA;
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+import static android.content.ContentValues.TAG;
 
 public class MainActivity extends NfcActivity implements Drawer.OnDrawerItemClickListener, View.OnClickListener {
     TextView storeName, product, pending, addProduct, addJeptags, report, support, fullName;
@@ -661,6 +662,9 @@ public class MainActivity extends NfcActivity implements Drawer.OnDrawerItemClic
 
                     tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
 
+                    /*String message2 = new String(message.getRecords()[0].getPayload());
+                    Log.d(TAG, "readFromNFC: "+message2);
+                    Toast.makeText(getApplicationContext(), message2, Toast.LENGTH_LONG).show();*/
 
                     if (NfcAdapter.ACTION_TAG_DISCOVERED.equals(action)
                             || NfcAdapter.ACTION_TECH_DISCOVERED.equals(action)

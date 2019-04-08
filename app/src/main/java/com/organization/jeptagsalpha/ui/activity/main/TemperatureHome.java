@@ -2,6 +2,7 @@ package com.organization.jeptagsalpha.ui.activity.main;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.Dialog;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -16,6 +17,7 @@ import android.icu.text.SimpleDateFormat;
 import android.location.LocationManager;
 import android.nfc.FormatException;
 import android.nfc.NdefMessage;
+import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
 import android.nfc.tech.Ndef;
@@ -26,34 +28,35 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Parcelable;
-import android.os.SystemClock;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.ams.as39513App.AS39513AppActivity;
-import com.organization.jeptagsalpha.Database.DBManager;
-import com.organization.jeptagsalpha.Database.DatabaseHelper;
+import com.organization.jeptagsalpha.Database.DatabaseHandler;
 import com.organization.jeptagsalpha.R;
-import com.organization.jeptagsalpha.Temperature.ChartActivity;
+//import com.organization.jeptagsalpha.Temperature.ChartActivity;
 import com.organization.jeptagsalpha.Temperature.Help;
 import com.organization.jeptagsalpha.Temperature.InfoActivity;
+import com.organization.jeptagsalpha.Temperature.ManageProfiles;
 import com.organization.jeptagsalpha.Temperature.QrScannerHandler;
 import com.organization.jeptagsalpha.Temperature.SettingActivity;
+import com.organization.jeptagsalpha.Temperature.TempHome;
 import com.organization.jeptagsalpha.Temperature.TempListActivity;
+import com.organization.jeptagsalpha.Temperature.TempPojo;
 import com.organization.jeptagsalpha.ui.activity.authorization.UserLoginDetails;
 import com.organization.jeptagsalpha.ui.activity.product.JepTagEncode;
 import com.organization.jeptagsalpha.wordpress.util.BasePreferenceHelper;
@@ -71,10 +74,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.nio.charset.Charset;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+
+import static android.content.ContentValues.TAG;
 
 public class TemperatureHome extends AppCompatActivity {
     EditText name_edittext, email_edittext, address_edittext, phone_edittext, profil_name_edittext,
@@ -105,6 +110,7 @@ public class TemperatureHome extends AppCompatActivity {
     ProgressDialog progressDialog;
     private NfcAdapter mAdapter;
     Button deactiveTag;
+    int a;
     private PendingIntent mPendingIntent;
     public static final int REQUEST_PERMISSION_CODE = 1;
 
@@ -117,8 +123,7 @@ public class TemperatureHome extends AppCompatActivity {
     String GetSQliteQuery;
     Cursor cursor;
     SQLiteDatabase sqLiteDatabase;
-    DatabaseHelper databaseHelper;
-    private DBManager dbManager;
+
     TextView control, info, list, chart;
     public static final String INTERVAL = "interval";
     public static final String UPPER_LIMIT = "upper_limit";
@@ -133,6 +138,16 @@ public class TemperatureHome extends AppCompatActivity {
     SharedPreferences.Editor editor;
     String interval, upper_limit, lower_limit, temperature, time_zone;
     int p1=0;
+    private Dialog dialog = null;
+
+
+
+    static final int CUSTOM_DIALOG_ID = 0;
+    Contact_Adapter cAdapter;
+    ListView dialog_ListView;
+    ArrayList<TempPojo> contact_data = new ArrayList<TempPojo>();
+    DatabaseHandler db;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -145,7 +160,7 @@ public class TemperatureHome extends AppCompatActivity {
         setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), SettingActivity.class);
+                Intent i = new Intent(getApplicationContext(), ManageProfiles.class);
                 i.putExtra("activity", activity);
                 startActivity(i);
                 finish();
@@ -234,7 +249,8 @@ public class TemperatureHome extends AppCompatActivity {
         select_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog();
+              //  AlertDialog();
+                showDialog(CUSTOM_DIALOG_ID);
             }
         });
         deactiveTag.setOnClickListener(new View.OnClickListener() {
@@ -260,7 +276,9 @@ public class TemperatureHome extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                     if (validate()){
-                        new StartRecord().execute();
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                            new StartRecord().execute();
+                        }
                     }
             }
         });
@@ -291,8 +309,8 @@ public class TemperatureHome extends AppCompatActivity {
         chart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), ChartActivity.class));
-                finish();
+              //  startActivity(new Intent(getApplicationContext(), ChartActivity.class));
+              //  finish();
             }
         });
 
@@ -330,9 +348,21 @@ public class TemperatureHome extends AppCompatActivity {
                 if (intent != null && NfcAdapter.ACTION_TAG_DISCOVERED.equals(action)
                         || NfcAdapter.ACTION_TECH_DISCOVERED.equals(action)
                         || NfcAdapter.ACTION_NDEF_DISCOVERED.equals(action)) {
-
+                      String s = "avikal prakash";
+                      String s2 = "pro";
                     tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
+                    NdefRecord record = NdefRecord.createMime(s2,s.getBytes());
+                    NdefMessage message = new NdefMessage(new NdefRecord[] { record });
+                    if (writeTag(message, tag)) {
+                        Toast.makeText(this, "Success: Wrote placeid to nfc tag", Toast.LENGTH_LONG)
+                                .show();
+                    }
 
+                 /*   String message2 = new String(message.getRecords()[0].getPayload());
+                    Log.d(TAG, "readFromNFC: "+message2);
+                    Toast.makeText(getApplicationContext(), message2, Toast.LENGTH_LONG).show();*/
+
+                 //   readFromTag(getIntent());
 
                     if (NfcAdapter.ACTION_TAG_DISCOVERED.equals(action)
                             || NfcAdapter.ACTION_TECH_DISCOVERED.equals(action)
@@ -349,7 +379,7 @@ public class TemperatureHome extends AppCompatActivity {
                         if (check == 2) {
                             if (nfcMode == 1) {
                                 p1=1;
-                                new ScanJepTagEncode().execute(tag_id);
+                       //         new ScanJepTagEncode().execute(tag_id);
                                 sharedpreferences= getSharedPreferences("MyPref", MODE_PRIVATE);
                                 editor = sharedpreferences.edit();
                                 editor.putString("p1",String.valueOf(p1));
@@ -702,13 +732,13 @@ public class TemperatureHome extends AppCompatActivity {
     }
 
 
+    /*
+     * Writes an NdefMessage to a NFC tag
+     */
     public boolean writeTag(NdefMessage message, Tag tag) {
         int size = message.toByteArray().length;
-
-        //  NfcV nfcV=NfcV.get(tag);
         try {
             Ndef ndef = Ndef.get(tag);
-            NfcV nfcV= NfcV.get(tag);
             if (ndef != null) {
                 ndef.connect();
                 if (!ndef.isWritable()) {
@@ -725,31 +755,19 @@ public class TemperatureHome extends AppCompatActivity {
                 }
                 ndef.writeNdefMessage(message);
                 return true;
-
-            }
-           /* else if (nfcV != null){
-                nfcV.connect();
-                if (!nfcV.isWritable()) {
-                    Toast.makeText(getApplicationContext(),
-                            "Error: tag not writable",
-                            Toast.LENGTH_SHORT).show();
+            } else {
+                NdefFormatable format = NdefFormatable.get(tag);
+                if (format != null) {
+                    try {
+                        format.connect();
+                        format.format(message);
+                        return true;
+                    } catch (IOException e) {
+                        return false;
+                    }
+                } else {
                     return false;
                 }
-                if (nfcV.getMaxTransceiveLength() < size) {
-                    Toast.makeText(getApplicationContext(),
-                            "Error: tag too small",
-                            Toast.LENGTH_SHORT).show();
-                    return false;
-                }
-
-                nfcV.writeNfcVMessage(message);
-                return true;
-            }*/
-            else
-            {
-                //nfcMode=3;
-                //progressBarShowHide(FORMAT_TAG,true,2);
-                return  false;
             }
         } catch (Exception e) {
             return false;
@@ -810,6 +828,201 @@ public class TemperatureHome extends AppCompatActivity {
 
 //        builder1.show();
 
+    }
+
+
+    @Override
+    protected Dialog onCreateDialog(int id) {
+
+
+        contact_data.clear();
+        db = new DatabaseHandler(this);
+        ArrayList<TempPojo> contact_array_from_db = db.Get_Contacts();
+        switch(id) {
+            case CUSTOM_DIALOG_ID:
+                dialog = new Dialog(TemperatureHome.this);
+                dialog.setContentView(R.layout.dialoglayout);
+
+
+                dialog.setCancelable(true);
+                dialog.setCanceledOnTouchOutside(true);
+
+                dialog.setOnCancelListener(new DialogInterface.OnCancelListener(){
+
+                    @Override
+                    public void onCancel(DialogInterface dialog) {
+// TODO Auto-generated method stub
+                       dialog.dismiss();
+                    }});
+
+                dialog.setOnDismissListener(new DialogInterface.OnDismissListener(){
+
+                    @Override
+                    public void onDismiss(DialogInterface dialog) {
+// TODO Auto-generated method stub
+                        dialog.dismiss();
+                    }});
+
+//Prepare ListView in dialog
+                for (int i = 0; i < contact_array_from_db.size(); i++) {
+
+                    int tidno = contact_array_from_db.get(i).getID();
+                    String name = contact_array_from_db.get(i).getName();
+                    String interval = contact_array_from_db.get(i).get_interval();
+                    String upper = contact_array_from_db.get(i).get_upper();
+                    String lower = contact_array_from_db.get(i).get_lower();
+                    TempPojo cnt = new TempPojo();
+                    cnt.setID(tidno);
+                    cnt.setName(name);
+                    cnt.set_interval(interval);
+                    cnt.set_upper(upper);
+                    cnt.set_lower(lower);
+
+                    contact_data.add(cnt);
+                }
+                db.close();
+                dialog_ListView = (ListView)dialog.findViewById(R.id.dialoglist);
+
+                cAdapter = new Contact_Adapter(TemperatureHome.this, R.layout.listview_row_profile,
+                        contact_data);
+                dialog_ListView.setAdapter(cAdapter);
+
+                dialog_ListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view,
+                                            int position, long id) {
+// TODO Auto-generated method stub
+                        Toast.makeText(TemperatureHome.this,
+                                parent.getItemAtPosition(position).toString() + " clicked",
+                                Toast.LENGTH_LONG).show();
+                        dismissDialog(CUSTOM_DIALOG_ID);
+                    }});
+
+
+                break;
+        }
+
+        return dialog;
+    }
+
+    @Override
+    protected void onPrepareDialog(int id, Dialog dialog, Bundle bundle) {
+// TODO Auto-generated method stub
+        super.onPrepareDialog(id, dialog, bundle);
+
+        switch(id) {
+            case CUSTOM_DIALOG_ID:
+//
+                break;
+        }
+    }
+
+    public class Contact_Adapter extends ArrayAdapter<TempPojo> {
+        Activity activity;
+        int layoutResourceId;
+        TempPojo user;
+        ArrayList<TempPojo> data = new ArrayList<TempPojo>();
+
+        public Contact_Adapter(Activity act, int layoutResourceId,
+                               ArrayList<TempPojo> data) {
+            super(act, layoutResourceId, data);
+            this.layoutResourceId = layoutResourceId;
+            this.activity = act;
+            this.data = data;
+            notifyDataSetChanged();
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View row = convertView;
+            Contact_Adapter.UserHolder holder = null;
+
+            if (row == null) {
+                LayoutInflater inflater = LayoutInflater.from(activity);
+
+                row = inflater.inflate(layoutResourceId, parent, false);
+                holder = new Contact_Adapter.UserHolder();
+                holder.name = (TextView) row.findViewById(R.id.user_name_txt);
+
+                holder.nameLayout = (LinearLayout) row.findViewById(R.id.nameLayout);
+                row.setTag(holder);
+            } else {
+                holder = (Contact_Adapter.UserHolder) row.getTag();
+            }
+            user = data.get(position);
+            holder.nameLayout.setTag(user.getID());
+            holder.name.setText(user.getName());
+         /*   holder.email.setText(user.getEmail());
+            holder.number.setText(user.getPhoneNumber());*/
+
+            holder.nameLayout.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    DatabaseHandler dbHandler = new DatabaseHandler(TemperatureHome.this);
+                    String id= v.getTag().toString();
+                    int USER_ID = Integer.parseInt(id);
+                    TempPojo c = dbHandler.Get_Contact(USER_ID);
+                    String name = c.getName();
+                    String interval = c.get_interval();
+                    String upper = c.get_upper();
+                    String lower = c.get_lower();
+                    String temp = c.get_temperature();
+                    String time = c.get_timezone();
+                    String hh = c.get_hh();
+                    String mm = c.get_mm();
+                    String ss = c.get_ss();
+                    textInterval.setText(interval);
+                    profil_name_edittext.setText(name);
+                    upper_edittext.setText(upper);
+                    lower_edittext.setText(lower);
+                    a=1;
+                    dialog.dismiss();
+                }
+            });
+
+            return row;
+
+        }
+
+        class UserHolder {
+            TextView name;
+            LinearLayout nameLayout;
+        }
+
+    }
+
+    public void readFromTag(Intent intent){
+       tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
+        Ndef ndef = Ndef.get(tag);
+
+
+        try{
+            ndef.connect();
+
+
+            Parcelable[] messages = intent.getParcelableArrayExtra(NfcAdapter.EXTRA_NDEF_MESSAGES);
+
+            if (messages != null) {
+                NdefMessage[] ndefMessages = new NdefMessage[messages.length];
+                for (int i = 0; i < messages.length; i++) {
+                    ndefMessages[i] = (NdefMessage) messages[i];
+                }
+                NdefRecord record = ndefMessages[0].getRecords()[0];
+
+                byte[] payload = record.getPayload();
+                String text = new String(payload);
+                Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG).show();
+
+
+                ndef.close();
+
+            }
+        }
+        catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "Cannot Read From Tag.", Toast.LENGTH_LONG).show();
+        }
     }
 
 }

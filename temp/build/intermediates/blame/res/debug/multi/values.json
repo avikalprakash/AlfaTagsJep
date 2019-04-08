@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+        "outputFile": "C:\\Users\\Fujitsu\\Desktop\\hement folder\\JepTags Alfa\\temp\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -315,7 +315,7 @@
                     "endOffset": 1133
                 },
                 "from": {
-                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values\\colors.xml",
+                    "file": "C:\\Users\\Fujitsu\\Desktop\\hement folder\\JepTags Alfa\\temp\\src\\main\\res\\values\\colors.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -2595,7 +2595,7 @@
                     "endOffset": 22691
                 },
                 "from": {
-                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Fujitsu\\Desktop\\hement folder\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -2614,7 +2614,7 @@
                     "endOffset": 22748
                 },
                 "from": {
-                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Fujitsu\\Desktop\\hement folder\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -2633,7 +2633,7 @@
                     "endOffset": 22809
                 },
                 "from": {
-                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Fujitsu\\Desktop\\hement folder\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -2652,7 +2652,7 @@
                     "endOffset": 22870
                 },
                 "from": {
-                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Fujitsu\\Desktop\\hement folder\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -2671,7 +2671,7 @@
                     "endOffset": 22938
                 },
                 "from": {
-                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Fujitsu\\Desktop\\hement folder\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -2690,7 +2690,7 @@
                     "endOffset": 23007
                 },
                 "from": {
-                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Fujitsu\\Desktop\\hement folder\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -2709,7 +2709,7 @@
                     "endOffset": 23054
                 },
                 "from": {
-                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Fujitsu\\Desktop\\hement folder\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -2728,7 +2728,7 @@
                     "endOffset": 23109
                 },
                 "from": {
-                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Fujitsu\\Desktop\\hement folder\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -2747,7 +2747,7 @@
                     "endOffset": 23162
                 },
                 "from": {
-                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Fujitsu\\Desktop\\hement folder\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -2766,7 +2766,7 @@
                     "endOffset": 23229
                 },
                 "from": {
-                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Fujitsu\\Desktop\\hement folder\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -2785,7 +2785,7 @@
                     "endOffset": 23265
                 },
                 "from": {
-                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Fujitsu\\Desktop\\hement folder\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -2804,7 +2804,7 @@
                     "endOffset": 23334
                 },
                 "from": {
-                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Fujitsu\\Desktop\\hement folder\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -2823,7 +2823,7 @@
                     "endOffset": 23377
                 },
                 "from": {
-                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Fujitsu\\Desktop\\hement folder\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -2842,7 +2842,7 @@
                     "endOffset": 23432
                 },
                 "from": {
-                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Fujitsu\\Desktop\\hement folder\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -2861,7 +2861,7 @@
                     "endOffset": 23485
                 },
                 "from": {
-                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Fujitsu\\Desktop\\hement folder\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -2880,7 +2880,7 @@
                     "endOffset": 23522
                 },
                 "from": {
-                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Fujitsu\\Desktop\\hement folder\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -2899,7 +2899,7 @@
                     "endOffset": 23575
                 },
                 "from": {
-                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Fujitsu\\Desktop\\hement folder\\JepTags Alfa\\temp\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -2938,7 +2938,7 @@
                     "endOffset": 23883
                 },
                 "from": {
-                    "file": "F:\\JepTagRepo\\alpha-app-android\\JepTags Alfa\\temp\\src\\main\\res\\values\\styles.xml",
+                    "file": "C:\\Users\\Fujitsu\\Desktop\\hement folder\\JepTags Alfa\\temp\\src\\main\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,

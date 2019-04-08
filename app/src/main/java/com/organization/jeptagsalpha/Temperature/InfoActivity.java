@@ -38,7 +38,7 @@ public class InfoActivity extends AppCompatActivity {
         setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), SettingActivity.class);
+                Intent i = new Intent(getApplicationContext(), ManageProfiles.class);
                 i.putExtra("activity", activity);
                 startActivity(i);
             }
@@ -128,8 +128,8 @@ public class InfoActivity extends AppCompatActivity {
         chart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), ChartActivity.class));
-                finish();
+             //   startActivity(new Intent(getApplicationContext(), ChartActivity.class));
+             //   finish();
             }
         });
     }

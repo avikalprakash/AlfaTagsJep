@@ -18,14 +18,17 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE     *
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.      *
  *****************************************************************************
+ *//*
+
  */
- /* @file ChartActivity.java
+/* @file ChartActivity.java
  *
  *  @author Florian Hofer (florian.hofer@ams.com)
  *
  *  @brief Main Activity for AS39513 Application
  *
- */
+ *//*
+
 package com.organization.jeptagsalpha.Temperature;
 
 import android.app.PendingIntent;
@@ -40,7 +43,7 @@ import android.nfc.Tag;
 import android.nfc.tech.NfcV;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.ActionBarActivity;
+//
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -91,7 +94,9 @@ public class ChartActivity extends ActionBarActivity {
     private Handler handler = new Handler();
     private boolean data_rate_low = false;
 
-    /** variables for graph */
+    */
+/** variables for graph *//*
+
     private XYSeries series;
     private XYMultipleSeriesRenderer mRenderer;
     private XYSeriesRenderer mSeriesRenderer;
@@ -107,7 +112,9 @@ public class ChartActivity extends ActionBarActivity {
     String activity="4";
     String p1;
     SharedPreferences sharedpreferences;
-    /** Called when the activity is first created. */
+    */
+/** Called when the activity is first created. *//*
+
     @Override
     public void onCreate(Bundle savedInstanceState) {    	
         super.onCreate(savedInstanceState);
@@ -119,7 +126,7 @@ public class ChartActivity extends ActionBarActivity {
         setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), SettingActivity.class);
+                Intent i = new Intent(getApplicationContext(), ManageProfiles.class);
                 i.putExtra("activity", activity);
                 startActivity(i);
             }
@@ -190,62 +197,7 @@ public class ChartActivity extends ActionBarActivity {
         return true;
     }
 
-   /* @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.datarate:
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-                builder.setTitle("Choose Tag Data Rate");
-                CharSequence[] items = {"High","Low"};
-                builder.setSingleChoiceItems(items, (data_rate_low? 1 : 0) , new DialogInterface.OnClickListener()
-                {
-                    @Override
-                    public void onClick(DialogInterface arg0, int arg1)
-                    {
-                        switch (arg1)
-                        {
-                            case 0:
-                                data_rate_low = false;
-                                break;
-                            case 1:
-                                data_rate_low = true;
-                                break;
-                        }
-                    }
-                });
-
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener()
-                {
-                    public void onClick(DialogInterface dialog, int which)
-                    {
-                        // here you can add functions
-                    }
-                });
-
-                AlertDialog alertDialog = builder.create();
-                alertDialog.show();
-                return true;
-            case R.id.help:
-                builder = new AlertDialog.Builder(this);
-
-                builder.setTitle("Help");
-                builder.setMessage("Place the phone on top of a AS39513 Tag. Some basic tag information along with the current temperature will automatically be read out and displayed in a graph.\n\nLow data rate may be chosen in the app settings. Please be aware that only a few phones support that.\n\nPredependencies: \nNFC enabled in the Android settings.\n\nVersion 1.0.1");
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener()
-                {
-                    public void onClick(DialogInterface dialog, int which)
-                    {
-                        // here you can add functions
-                    }
-                });
-
-                alertDialog = builder.create();
-                alertDialog.show();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }*/
 
     private void initializeGraph ()
     {
@@ -391,11 +343,13 @@ public class ChartActivity extends ActionBarActivity {
         mNfcAdapter.disableForegroundDispatch(this);
     }
 
-   /* @Override
+   */
+/* @Override
     public void startActivity (Intent intent) {
         Log.i(TAG, "startActivity()");
         handleIntent(intent);
-    }*/
+    }*//*
+
 
     @Override
     protected void onNewIntent(Intent intent) {
@@ -448,14 +402,16 @@ public class ChartActivity extends ActionBarActivity {
         }
     }
 
-    /**
+    */
+/**
      * \brief Update the displayed UID
      *
      * Updates the displayed UID from a byte array from tag.getId().
      * Corrects the byte order of the UID to MSB first.
      *
      * @param uid UID retrieved from tag.getId()
-     */
+     *//*
+
     private void updateDisplayedUid(byte[] uid) {
         String uidString = new String();
         for (int index = uid.length - 1; index >= 0; --index)
@@ -554,12 +510,14 @@ public class ChartActivity extends ActionBarActivity {
         // externalSensorTextView.setText(String.format("%.2f V", voltage));
     }
 
-    /**
+    */
+/**
      * Update the displayed battery data.
      *
      * @param code Battery measurement result (ADC value).
      * @param batteryVoltage Battery measurement result (Voltage).
-     */
+     *//*
+
     private void updateDisplayedBattery(int code, double batteryVoltage) {
         if(code == 0xA3 || code == 0x00)
             textView_batteryVoltage_value.setText("No Battery");
@@ -567,9 +525,11 @@ public class ChartActivity extends ActionBarActivity {
             textView_batteryVoltage_value.setText(String.format("%.2f V", batteryVoltage));
     }
 
-    /**
+    */
+/**
      * Update the displayed logging mode.
-     */
+     *//*
+
     private void updateDisplayedLogMode(AS39513.LogMode logMode) {
         switch (logMode.logmd) {
             case 0: textView_loggingForm_value.setText("Dense"); break;
@@ -603,9 +563,11 @@ public class ChartActivity extends ActionBarActivity {
             textView_batteryCheck_value.setText("Disabled");
     }
 
-    /**
+    */
+/**
      * Update the displayed log limits.
-     */
+     *//*
+
     private void udpateDisplayedLogLimits(AS39513.LogLimits logLimits) {
         AS39513 as39513 = new AS39513(nfcv,data_rate_low);
         try
@@ -718,7 +680,8 @@ public class ChartActivity extends ActionBarActivity {
                 return;
             }
 			
-			/* External sensor readout is currently not supported
+			*/
+/* External sensor readout is currently not supported
 			try {
     			logMode.sensor = AS39513.LogMode.Sensor.EXTERNAL;
     			AS39513.setLogMode(logLimits, logMode);
@@ -727,11 +690,12 @@ public class ChartActivity extends ActionBarActivity {
     			updateDisplayedExternalSensor(externalSensorCode, externalSensorValue);
     		} catch (IOException e)  {
     			Log.e(TAG, "Failed to read external sensor values:" +  e.getMessage());
-    		}*/
+    		}*//*
+
 
             handler.postDelayed(updateSensorData, 600);
         }
     };
 
 
-}
+}*/

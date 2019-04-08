@@ -1,5 +1,7 @@
 package com.organization.jeptagsalpha.Temperature;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -7,9 +9,16 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
+import com.organization.jeptagsalpha.Database.DatabaseHandler;
 import com.organization.jeptagsalpha.R;
+
+import java.util.ArrayList;
 
 
 //Implementing the interface OnTabSelectedListener to our MainActivity
@@ -21,6 +30,11 @@ public class TempHome extends AppCompatActivity implements TabLayout.OnTabSelect
 
     //This is our viewPager
     private ViewPager viewPager;
+    static final int CUSTOM_DIALOG_ID = 0;
+ManageProfiles.Contact_Adapter cAdapter;
+    ListView dialog_ListView;
+    ArrayList<TempPojo> contact_data = new ArrayList<TempPojo>();
+    DatabaseHandler db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,4 +104,94 @@ public class TempHome extends AppCompatActivity implements TabLayout.OnTabSelect
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    protected Dialog onCreateDialog(int id) {
+
+        Dialog dialog = null;
+        contact_data.clear();
+        db = new DatabaseHandler(this);
+        ArrayList<TempPojo> contact_array_from_db = db.Get_Contacts();
+        switch(id) {
+            case CUSTOM_DIALOG_ID:
+                dialog = new Dialog(TempHome.this);
+                dialog.setContentView(R.layout.dialoglayout);
+                dialog.setTitle("Profile Select");
+
+                dialog.setCancelable(true);
+                dialog.setCanceledOnTouchOutside(true);
+
+                dialog.setOnCancelListener(new DialogInterface.OnCancelListener(){
+
+                    @Override
+                    public void onCancel(DialogInterface dialog) {
+// TODO Auto-generated method stub
+                        Toast.makeText(TempHome.this,
+                                "OnCancelListener",
+                                Toast.LENGTH_LONG).show();
+                    }});
+
+                dialog.setOnDismissListener(new DialogInterface.OnDismissListener(){
+
+                    @Override
+                    public void onDismiss(DialogInterface dialog) {
+// TODO Auto-generated method stub
+                        Toast.makeText(TempHome.this,
+                                "OnDismissListener",
+                                Toast.LENGTH_LONG).show();
+                    }});
+
+//Prepare ListView in dialog
+                for (int i = 0; i < contact_array_from_db.size(); i++) {
+
+                    int tidno = contact_array_from_db.get(i).getID();
+                    String name = contact_array_from_db.get(i).getName();
+                    String interval = contact_array_from_db.get(i).get_interval();
+                    String upper = contact_array_from_db.get(i).get_upper();
+                    String lower = contact_array_from_db.get(i).get_lower();
+                    TempPojo cnt = new TempPojo();
+                    cnt.setID(tidno);
+                    cnt.setName(name);
+                    cnt.set_interval(interval);
+                    cnt.set_upper(upper);
+                    cnt.set_lower(lower);
+
+                    contact_data.add(cnt);
+                }
+                db.close();
+                dialog_ListView = (ListView)dialog.findViewById(R.id.dialoglist);
+
+                cAdapter = new ManageProfiles.Contact_Adapter(TempHome.this, R.layout.listview_row,
+                        contact_data);
+                dialog_ListView.setAdapter(cAdapter);
+                dialog_ListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view,
+                                            int position, long id) {
+// TODO Auto-generated method stub
+                        Toast.makeText(TempHome.this,
+                                parent.getItemAtPosition(position).toString() + " clicked",
+                                Toast.LENGTH_LONG).show();
+                        dismissDialog(CUSTOM_DIALOG_ID);
+                    }});
+
+                break;
+        }
+
+        return dialog;
+    }
+
+    @Override
+    protected void onPrepareDialog(int id, Dialog dialog, Bundle bundle) {
+// TODO Auto-generated method stub
+        super.onPrepareDialog(id, dialog, bundle);
+
+        switch(id) {
+            case CUSTOM_DIALOG_ID:
+//
+                break;
+        }
+    }
+
 }
